@@ -1,0 +1,21 @@
+﻿<Window x:Class="StackOverflowWizardExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:common="clr-namespace:StackOverflowWizardExample"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <common:MainViewModel />
+    </Window.DataContext>
+    <Grid>
+        <common:WizardControl>
+            <common:WizardControl.Pages>
+                <common:WizardPageCollection>
+                    <!--<common:MyPage DataContext="{Binding DataContext.Page1VM, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" />
+                    <common:MyPage DataContext="{Binding DataContext.Page2VM, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" />-->
+                    <common:MyPage DataContext="{Binding Page1VM}" />
+                    <common:MyPage DataContext="{Binding Page2VM}" />
+                </common:WizardPageCollection>
+            </common:WizardControl.Pages>
+        </common:WizardControl>
+    </Grid>
+</Window>
